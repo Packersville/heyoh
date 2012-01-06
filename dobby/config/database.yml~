@@ -17,7 +17,7 @@ test:
   encoding: utf8
   reconnect: false
   pool: 5
-  username: mangantj
+ username: mangantj
   password: password
   socket: /var/run/mysqld/mysqld.sock
 

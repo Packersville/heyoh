@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  week_id: 1
+  awayTeam: 1
+  homeTeam: 1
+
+two:
+  week_id: 1
+  awayTeam: 1
+  homeTeam: 1

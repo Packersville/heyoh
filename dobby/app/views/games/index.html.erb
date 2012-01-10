@@ -1,0 +1,4 @@
+<h1> Week <%= @games[0].week_id %> Games </h1>
+<% @games.each do |game| %>
+  <%= get_team_name(game.awayTeam) %> vs. <%= get_team_name(game.homeTeam) %>
+<% end %>

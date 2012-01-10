@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  season_id: 1
+  weekCount: 1
+
+two:
+  season_id: 1
+  weekCount: 1

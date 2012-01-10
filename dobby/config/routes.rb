@@ -4,6 +4,7 @@ Dobby::Application.routes.draw do
   end
 
   resources :users, :only => :show
+  resources :weeks, :only => :index
   root :to => "devise/sessions#new"
   
 end

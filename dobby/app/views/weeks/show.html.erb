@@ -1,4 +1,5 @@
 <h1> Week <%= @week_games[0].week_id %> Games </h1>
 <% @week_games.each do |game| %>
-  <%= get_team_name(game.awayTeam) %> vs. <%= get_team_name(game.homeTeam) %>
+  <%= radio_button("week", "game1", get_team_name(game.awayTeam)) %> <%= get_team_name(game.awayTeam) %> vs. 
+  <%= radio_button("week", "game1", get_team_name(game.homeTeam)) %> <%= get_team_name(game.homeTeam) %> <br/>
 <% end %>

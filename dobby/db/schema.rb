@@ -21,12 +21,6 @@ ActiveRecord::Schema.define(:version => 20120111162039) do
     t.datetime "updated_at"
   end
 
-  create_table "seasons", :force => true do |t|
-    t.integer  "year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "teams", :force => true do |t|
     t.string "city"
     t.string "name"
@@ -61,13 +55,6 @@ ActiveRecord::Schema.define(:version => 20120111162039) do
     t.integer  "user_id"
     t.integer  "game_id"
     t.integer  "pick"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "weeks", :force => true do |t|
-    t.integer  "season_id"
-    t.integer  "weekCount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

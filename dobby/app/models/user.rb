@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :users_picks
   # Include default devise modules. Others available are:
   # :token_authenticatable, :lockable, :timeoutable and :activatable
   devise :database_authenticatable, :registerable,

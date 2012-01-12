@@ -13,3 +13,5 @@ Team.create([{ city: 'Atlanta', name: 'Falcons'}, {city: 'Baltimore', name:'Rave
                      {city: 'New York', name: 'Giants'}, {city: 'New York', name: 'Jets'}, {city: 'Oakland', name: 'Raiders'}, {city: 'Philadelphia', name: 'Eagles'}, {city: 'Arizona', name: 'Cardinals'},
                      {city: 'Pittsburgh', name: 'Steelers'}, {city: 'St Louis', name: 'Rams'}, {city: 'San Diego', name: 'Chargers'}, {city: 'San Francisco', name: '49ers'}, {city: 'Seattle', name: 'Seahawks'},
                      {city: 'Tampa Bay', name: 'Buccaneers'}, {city: 'Washington', name: 'Redskins'}])
+
+Game.create([{awayTeam: 1, homeTeam: 2, week: 1, index: 1}, {awayTeam: 3, homeTeam: 4, week: 1, index: 2}])

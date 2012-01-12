@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120111202610) do
+ActiveRecord::Schema.define(:version => 20120111205041) do
 
   create_table "games", :force => true do |t|
     t.integer  "awayTeam"
@@ -34,10 +34,6 @@ ActiveRecord::Schema.define(:version => 20120111202610) do
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -52,16 +48,31 @@ ActiveRecord::Schema.define(:version => 20120111202610) do
     t.string   "lastName"
   end
 
-  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "users_picks", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "game_id"
-    t.integer  "pick"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "game1"
+    t.integer  "game2"
+    t.integer  "game3"
+    t.integer  "game4"
+    t.integer  "game5"
+    t.integer  "game6"
+    t.integer  "game7"
+    t.integer  "game8"
+    t.integer  "game9"
+    t.integer  "game10"
+    t.integer  "game11"
+    t.integer  "game12"
+    t.integer  "game13"
+    t.integer  "game14"
+    t.integer  "game15"
+    t.integer  "game16"
+    t.integer  "year"
+    t.integer  "week"
   end
 
 end

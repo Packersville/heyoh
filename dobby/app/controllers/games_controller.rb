@@ -7,6 +7,7 @@ class GamesController < ApplicationController
   
   def create
     @userspicks = current_user.users_picks.build(params[:users_picks])
-    @users_pick.save
+    @userspicks.save
+    redirect_to games_path(@get_current_week)
   end
 end

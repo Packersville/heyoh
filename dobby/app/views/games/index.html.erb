@@ -1,8 +1,8 @@
 <h1> Week <%= @games[0].week %> Games </h1>
 <%= form_for :users_picks do |f| %>
   <% @games.each do |game| %>
-    <%= radio_button_tag( "users_picks[#{game.id}]", "#{game.awayTeam}") %> <%= label_tag("users_picks'#{game.id}'#{game.awayTeam}", get_team_name(game.awayTeam)) %> vs. 
-    <%= radio_button_tag( "users_picks[#{game.id}]", "#{game.homeTeam}") %> <%= label_tag("users_picks'#{game.id}'#{game.homeTeam}", get_team_name(game.homeTeam)) %> <br/>
+    <%= f.radio_button("game#{game.index}", game.awayTeam) %> <%= label_tag("users_picks'#{game.id}'#{game.awayTeam}", get_team_name(game.awayTeam)) %> vs. 
+    <%= f.radio_button("game#{game.index}", game.homeTeam) %> <%= label_tag("users_picks'#{game.id}'#{game.homeTeam}", get_team_name(game.homeTeam)) %> <br/>
   <% end %>
   <div class="actions">
     <%= f.submit %>

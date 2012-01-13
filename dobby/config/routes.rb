@@ -5,6 +5,7 @@ Dobby::Application.routes.draw do
 
   resources :users, :only => :show
   resources :games, :only => [:index, :create, :edit]
+  resources :admin, :only => :index
   root :to => "devise/sessions#new"
   
 end

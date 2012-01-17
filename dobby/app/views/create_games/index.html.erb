@@ -1,3 +1,5 @@
 <% for week in 1..17 %>
   <%= link_to "Week #{week}", edit_create_game_path(week) %><br/>
 <% end %>
+<br/>
+<%= link_to "Admin index", admin_index_path %>

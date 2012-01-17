@@ -7,7 +7,8 @@ class WeeksController < ApplicationController
   
   def show 
     get_user_picks
-    @week = Week.find(@get_current_week)
+    @week = Week.find(params[:id])
+    p @week.games
   end
   
   def create

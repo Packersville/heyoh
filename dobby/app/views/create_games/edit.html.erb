@@ -20,6 +20,14 @@
     showOn: "button",
     butonImageOnly: true,
     dateFormat: "yy-mm-dd",
+    onSelect: function(dateText, inst) {
+      if( $(this).attr("id") == $(".datepicker").first().attr("id")) {
+	$(".datepicker").each(function(index) {
+	  if( index < 15)
+	    $(this).val($(".datepicker").first().val());
+	});
+      }
+    }
   });
   $(".timepicker").timeEntry();
 </script>

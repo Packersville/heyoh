@@ -14,4 +14,7 @@ Team.create([{ city: 'Atlanta', name: 'Falcons'}, {city: 'Baltimore', name:'Rave
                      {city: 'Pittsburgh', name: 'Steelers'}, {city: 'St Louis', name: 'Rams'}, {city: 'San Diego', name: 'Chargers'}, {city: 'San Francisco', name: '49ers'}, {city: 'Seattle', name: 'Seahawks'},
                      {city: 'Tampa Bay', name: 'Buccaneers'}, {city: 'Washington', name: 'Redskins'}])
 
-Game.create([{awayTeam: 1, homeTeam: 2, week: 1, index: 1}, {awayTeam: 3, homeTeam: 4, week: 1, index: 2}])
+#Game.create([{away_team_id: 1, home_team_id: 2, week: 1, index: 1}, {away_team_id: 3, homeTeam: 4, week: 1, index: 2}])
+
+Week.create([{week:1, year:2012}, {week:2, year:2012}, {week:3, year:2012}, {week:4, year:2012}, {week:5, year:2012}, {week:6, year:2012}, {week:7, year:2012}, {week:8, year:2012}, {week:9, year:2012},
+             {week:10, year:2012},{week:11, year:2012}, {week:12, year:2012}, {week:13, year:2012}, {week:14, year:2012}, {week:15, year:2012}, {week:16, year:2012}])

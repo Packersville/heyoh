@@ -1,0 +1,25 @@
+<style type="text/css">@import "jquery.timeentry.css";</style> 
+<script type="text/javascript" src="jquery.timeentry.js"></script>
+
+<%= form_tag create_game_path, :method => :put do %>
+  <h2><%= label_tag :awayTeam, "Away Team", :class => 'awayTeam_label' %> <%= label_tag :homeTeam, "Home Team", :class => 'homeTeam_label'%> 
+  <%= label_tag :date, "Date", :class => 'date_label' %> <%= label_tag :time, "Time", :class => 'time_label'%> <%= label_tag :spread, "Spread", :class => 'spread_label' %></h2>
+  <% for game in @games %>
+    <%= fields_for "games[]", game do |f| %>
+      <div class='create_games_list'>
+	<%= label_tag :game, "Game #{game.index}", :class => 'game_label' %>
+	<%= render "fields", {:f => f, :game => game}%>
+      </div>
+    <% end %>
+  <% end %>
+  <p><%= submit_tag "Submit" %></p>
+<% end %>
+
+<script language="javascript">
+  $(".datepicker").datepicker({
+    showOn: "button",
+    butonImageOnly: true,
+    dateFormat: "yy-mm-dd",
+  });
+  $(".timepicker").timeEntry();
+</script>

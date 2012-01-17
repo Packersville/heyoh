@@ -1,0 +1,41 @@
+// Place all the styles related to the CreateGames controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.game_label{ 
+  padding-right: 20px;
+}
+
+.awayTeam_label{
+  padding-left: 30px;
+}
+
+.homeTeam_label{
+  padding-left: 90px;
+}
+
+.date_label{
+  padding-left: 100px;
+}
+
+.time_label{
+  padding-left: 100px;
+}
+.spread_label{
+  padding-left: 75px;
+}
+.create_games_list{
+  line-height: 33px;
+}
+.spread_field{
+  width: 50px;
+  margin-left: 5px;
+  text-align: center;
+}
+.timepicker{
+  width: 60px;
+  margin-left: 7px;
+}
+.datepicker{
+  margin-left: 7px;
+}

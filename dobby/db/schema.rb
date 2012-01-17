@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120111205041) do
+ActiveRecord::Schema.define(:version => 20120116211841) do
 
   create_table "games", :force => true do |t|
-    t.integer  "awayTeam"
-    t.integer  "homeTeam"
+    t.integer  "away_team_id"
+    t.integer  "home_team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "week"
     t.date     "date"
-    t.time     "time"
+    t.string   "time"
     t.integer  "year"
     t.integer  "spread"
     t.integer  "index"

@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   def get_current_week
     @get_current_week = 1
   end
+  
+  def get_current_year
+    @get_current_year = 2012
+  end
 end

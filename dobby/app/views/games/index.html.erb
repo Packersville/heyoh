@@ -14,7 +14,7 @@
       <%= f.radio_button("game#{game.index}", game.homeTeam) %> <%= label_tag("users_picks'#{game.id}'#{game.homeTeam}", get_team_name(game.homeTeam)) %> <br/>
     <% end %>
   <% end %>
-  <div class="actions">
+  <div class="actions navigation-links">
     <%= f.submit %>
   </div>
 <% end %>

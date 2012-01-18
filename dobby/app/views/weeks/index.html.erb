@@ -1,5 +1,8 @@
+<div class="container-content">
+<h1> Weeks </h1>
 <% @weeks.each do |week| %>
   <%= link_to "Week #{week.id}", week_path(week.id) %><br/>
 <% end %>
 <br/>
 <%= link_to 'User Index', user_path(current_user) %>
+</div>

@@ -1,6 +1,6 @@
 class CreateGamesController < ApplicationController
   before_filter :get_current_week, :get_current_year
-  load_and_authorize_resource
+  
   
   def edit
     @teams = Team.all

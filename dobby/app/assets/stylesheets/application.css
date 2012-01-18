@@ -11,3 +11,27 @@
 }
 
 input { -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+#container {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
+
+a {
+  color: #0000FF;
+}

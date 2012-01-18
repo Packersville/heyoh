@@ -11,12 +11,13 @@ class WeeksController < ApplicationController
     p @week.games
   end
   
-  def create
+  def update
     remove_user_picks_if_present
     @userspicks = current_user.users_picks.build(params[:users_picks])
-    @userspicks.week = @get_current_week
+    @userspicks.week = params[:id]
+    p @userspicks
     @userspicks.save
-    redirect_to games_path
+    redirect_to week_path(params[:id])
   end
   
   protected

@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_filter :get_current_week
+  load_and_authorize_resource
   
   def index
     get_user_picks

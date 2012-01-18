@@ -1,5 +1,6 @@
 class WeeksController < ApplicationController
   before_filter :get_current_week, :get_current_year
+  load_and_authorize_resource
   
   def index
     @weeks = Week.where("year = '#{@get_current_year}'")

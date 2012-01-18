@@ -2,4 +2,6 @@
 
 
 <%= link_to "Pick'em", weeks_path %><br/>
-<%= link_to "Admin Page", admin_index_path %>
+<% if current_user.admin == true %>
+  <%= link_to "Admin Page", admin_index_path %>
+<% end %>

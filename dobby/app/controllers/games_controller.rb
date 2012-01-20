@@ -1,18 +1,22 @@
 class GamesController < ApplicationController
-  before_filter :get_current_week
+  before_filter :get_current_year
   load_and_authorize_resource
   
   def index
-    get_user_picks
-    @games = Game.where("week= '#{@get_current_week}'")
+    @weeks = Week.where("year = '#{@get_current_year}'")
   end
   
-  def create
-    remove_user_picks_if_present
-    @userspicks = current_user.users_picks.build(params[:users_picks])
-    @userspicks.week = @get_current_week
-    @userspicks.save
-    redirect_to games_path
+#   def create
+#     remove_user_picks_if_present
+#     @userspicks = current_user.users_picks.build(params[:users_picks])
+#     @userspicks.week = @get_current_week
+#     @userspicks.save
+#     redirect_to games_path
+#   end
+  
+  def edit
+    @week = Week.find(params[:id])
+    @games = @week.games
   end
   
   protected

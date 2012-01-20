@@ -1,20 +1,5 @@
-<h1> Week <%= @games[0].week %> Games </h1>
-<%= form_for :users_picks do |f| %>
-  <% @games.each do |game| %>
-    <% if @users_picks != [] && @users_picks.present? %>
-      <% if game.awayTeam == @users_picks.send("game#{game.index}") %>
-	<%= f.radio_button("game#{game.index}", game.awayTeam, :checked => true) %> <%= label_tag("users_picks'#{game.id}'#{game.awayTeam}", get_team_name(game.awayTeam)) %> vs. 
-	<%= f.radio_button("game#{game.index}", game.homeTeam) %> <%= label_tag("users_picks'#{game.id}'#{game.homeTeam}", get_team_name(game.homeTeam)) %> <br/>
-      <% else %>
-	<%= f.radio_button("game#{game.index}", game.awayTeam) %> <%= label_tag("users_picks'#{game.id}'#{game.awayTeam}", get_team_name(game.awayTeam)) %> vs. 
-	<%= f.radio_button("game#{game.index}", game.homeTeam, :checked => true) %> <%= label_tag("users_picks'#{game.id}'#{game.homeTeam}", get_team_name(game.homeTeam)) %> <br/>
-      <% end %>
-    <% else %>
-      <%= f.radio_button("game#{game.index}", game.awayTeam) %> <%= label_tag("users_picks'#{game.id}'#{game.awayTeam}", get_team_name(game.awayTeam)) %> vs. 
-      <%= f.radio_button("game#{game.index}", game.homeTeam) %> <%= label_tag("users_picks'#{game.id}'#{game.homeTeam}", get_team_name(game.homeTeam)) %> <br/>
-    <% end %>
-  <% end %>
-  <div class="actions navigation-links">
-    <%= f.submit %>
-  </div>
+<h1> Weeks </h1>
+<% @weeks.each do |week| %>
+  <%= link_to "Week #{week.week}", edit_game_path(week.id) %><br/>
 <% end %>
+<br/>

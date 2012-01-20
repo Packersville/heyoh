@@ -33,16 +33,4 @@ class WeeksController < ApplicationController
       render 'edit'
     end
   end
-  
-  protected
-#   def get_user_picks
-#     @users_picks = UsersPick.where("user_id = '#{current_user.id}' AND week_id = '#{params[:id]}'").first
-#   end
-  
-#   def remove_user_picks_if_present
-#     picks =  UsersPick.where("user_id = '#{current_user.id}' AND week_id = '#{params[:id]}'").first
-#     if picks.present?
-#       UsersPick.find(picks.id).destroy
-#     end
-#   end
 end

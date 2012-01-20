@@ -1,7 +1,7 @@
 <h1> <%= @user.firstName %>'s Page </h1>
 
 
-<%= link_to "Pick'em", weeks_path %><br/>
+<%= link_to "Pick'em", games_path %><br/>
 <% if current_user.admin == true %>
   <%= link_to "Admin Page", admin_index_path %>
 <% end %>

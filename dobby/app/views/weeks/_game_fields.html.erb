@@ -2,11 +2,11 @@
 <tr>
   <td><%= f2.label :game, "Game #{f2.object.index}", :class => 'game_label' %></td>
 
-  <td><%= f2.select :away_team_id, options_from_collection_for_select(@teams, :id, :name), {:include_blank => 'Please Select'}%></td> 
+  <td><%= f2.select :away_team_id, options_from_collection_for_select(@teams, :id, :name, f2.object.away_team_id), {:include_blank => 'Please Select'}%></td> 
     
   <td>vs.</td>
 
-  <td><%= f2.select :home_team_id, options_from_collection_for_select(@teams, :id, :name), {:include_blank => 'Please Select'}%></td>
+  <td><%= f2.select :home_team_id, options_from_collection_for_select(@teams, :id, :name, f2.object.home_team_id), {:include_blank => 'Please Select'}%></td>
 
   <td><%= f2.text_field :date, :class => 'datepicker' %></td>
 

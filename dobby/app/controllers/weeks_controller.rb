@@ -25,7 +25,9 @@ class WeeksController < ApplicationController
   end
   
   def update
-    @games = Game.update(params[:games].keys, params[:games].values).reject { |g| g.errors.empty? }
+    @week = Week.find(params[:id])
+    @week.update_attributes(params[:week])
+   
     redirect_to edit_week_path(params[:id])
   end
   

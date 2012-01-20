@@ -1,5 +1,5 @@
 class CreateGamesController < ApplicationController
-  before_filter :get_current_week, :get_current_year
+  before_filter  :get_current_year
   
   
   def edit

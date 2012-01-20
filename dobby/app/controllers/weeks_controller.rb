@@ -1,35 +1,43 @@
 class WeeksController < ApplicationController
-  before_filter :get_current_week, :get_current_year
+  before_filter :get_current_year
   load_and_authorize_resource
   
   def index
     @weeks = Week.where("year = '#{@get_current_year}'")
+    if @weeks == [] || @weeks.nil?
+      @weeks = Array.new(17) { Week.new(:year => @get_current_year) }
+      @weeks.each_with_index do |week, index|
+	week.week = index + 1
+      end
+      @weeks.each(&:save!)
+    end
   end
   
-  def show 
-    get_user_picks
-    @week = Week.find(params[:id])
-    p @week.games
+  def edit 
+    @teams = Team.all
+    if !@week.games.present?
+      16.times { @week.games.build }
+      @week.games.each_with_index do |game, index|
+	game.index = index + 1
+      end
+      @week.games.each(&:save!)
+    end
   end
   
   def update
-    remove_user_picks_if_present
-    @userspicks = current_user.users_picks.build(params[:users_picks])
-    @userspicks.week = params[:id]
-    p @userspicks
-    @userspicks.save
-    redirect_to week_path(params[:id])
+    @games = Game.update(params[:games].keys, params[:games].values).reject { |g| g.errors.empty? }
+    redirect_to edit_week_path(params[:id])
   end
   
   protected
-  def get_user_picks
-    @users_picks = UsersPick.where("user_id = '#{current_user.id}' AND week = '#{@get_current_week}'").first
-  end
+#   def get_user_picks
+#     @users_picks = UsersPick.where("user_id = '#{current_user.id}' AND week_id = '#{params[:id]}'").first
+#   end
   
-  def remove_user_picks_if_present
-    picks =  UsersPick.where("user_id = '#{current_user.id}' AND week = '#{@get_current_week}'").first
-    if picks.present?
-      UsersPick.find(picks.id).destroy
-    end
-  end
+#   def remove_user_picks_if_present
+#     picks =  UsersPick.where("user_id = '#{current_user.id}' AND week_id = '#{params[:id]}'").first
+#     if picks.present?
+#       UsersPick.find(picks.id).destroy
+#     end
+#   end
 end

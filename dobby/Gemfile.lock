@@ -45,6 +45,7 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
+    dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (1.2.13)
       multi_json (~> 1.0)
@@ -126,6 +127,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.1.1)
   devise
+  dynamic_form
   inherited_resources
   jquery-rails
   mysql2

@@ -10,8 +10,13 @@ class ApplicationController < ActionController::Base
     @get_current_season = 1
   end
   
-  def get_current_week
-    @get_current_week = 1
+  def get_week
+    week = Week.where("year = #{get_current_year}").last
+    if week.nil?
+      @get_week = 1
+    else
+      @get_week = week.week + 1
+    end
   end
   
   def get_current_year

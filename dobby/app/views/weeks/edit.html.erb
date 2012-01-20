@@ -1,15 +1,13 @@
 <style type="text/css">@import "jquery.timeentry.css";</style> 
 <script type="text/javascript" src="jquery.timeentry.js"></script>
 
-<%= form_tag create_game_path, :method => :put do %>
-  <% for game in @games %>
-    <%= fields_for "games[]", game do |f| %>
-      <div class='create_games_list'>
-	<%= label_tag :game, "Game #{game.index}", :class => 'game_label' %>
-	<%= render "fields", {:f => f, :game => game}%>
-      </div>
+<h1> Create Games </h1>
+<%= form_for @week do |f|%>
+  <table>
+    <%= f.fields_for :games do |f2| %>
+      <%= render "game_fields", :f2 => f2%>
     <% end %>
-  <% end %>
+  </table>
   <p><%= submit_tag "Submit" %> | <%= link_to "Create Games Index", create_games_path  %> </p>
 <% end %>
 

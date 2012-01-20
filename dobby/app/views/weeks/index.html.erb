@@ -1,6 +1,6 @@
 <h1> Weeks </h1>
 <% @weeks.each do |week| %>
-  <%= link_to "Week #{week.id}", week_path(week.id) %><br/>
+  <%= link_to "Week #{week.week}", edit_week_path(week.id) %><br/>
 <% end %>
 <br/>
 <div class="navigation-links">

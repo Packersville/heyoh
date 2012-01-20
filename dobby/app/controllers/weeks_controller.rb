@@ -25,10 +25,13 @@ class WeeksController < ApplicationController
   end
   
   def update
+    @teams = Team.all
     @week = Week.find(params[:id])
-    @week.update_attributes(params[:week])
-   
-    redirect_to edit_week_path(params[:id])
+    if @week.update_attributes(params[:week])
+      redirect_to edit_week_path(params[:id])
+    else
+      render 'edit'
+    end
   end
   
   protected

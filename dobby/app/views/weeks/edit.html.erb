@@ -1,29 +1,11 @@
-<style type="text/css">@import "jquery.timeentry.css";</style> 
-<script type="text/javascript" src="jquery.timeentry.js"></script>
 
 <h1> Create Games </h1>
 <%= form_for @week do |f|%>
+  <%= f.error_messages %>
   <table>
     <%= f.fields_for :games do |f2| %>
       <%= render "game_fields", :f2 => f2%>
     <% end %>
   </table>
-  <p><%= submit_tag "Submit" %> | <%= link_to "Create Games Index", create_games_path  %> </p>
+  <p><%= submit_tag "Submit" %> | <%= link_to "Week Index", weeks_path  %> </p>
 <% end %>
-
-<script language="javascript">
-  $(".datepicker").datepicker({
-    showOn: "button",
-    butonImageOnly: true,
-    dateFormat: "yy-mm-dd",
-    onSelect: function(dateText, inst) {
-      if( $(this).attr("id") == $(".datepicker").first().attr("id")) {
-	$(".datepicker").each(function(index) {
-	  if( index < 15)
-	    $(this).val($(".datepicker").first().val());
-	});
-      }
-    }
-  });
-  $(".timepicker").timeEntry();
-</script>

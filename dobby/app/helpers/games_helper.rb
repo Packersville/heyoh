@@ -3,4 +3,13 @@ module GamesHelper
     team = Team.find(teamNumber)
     team.name
   end 
+  
+  def disable_submit?
+    week = Week.find(@game.week_id)
+    if week.week != @get_current_week
+      false
+    else
+      true
+    end
+  end
 end

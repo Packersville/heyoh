@@ -37,6 +37,10 @@
     <% end %>
   </table>
   <div class="actions navigation-links">
-    <%= f.submit %>
+    <% if disable_submit? %>
+      <%= f.submit %> |
+    <% end %> 
+    <% p disable_submit? %>
+    <%= link_to "Games Index", games_path %> | <%= link_to "User Index", user_path(current_user) %>
   </div>
 <% end %>

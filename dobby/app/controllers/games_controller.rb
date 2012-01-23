@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_filter :get_current_year
+  before_filter :get_current_year, :get_current_week
   load_and_authorize_resource
   
   def index

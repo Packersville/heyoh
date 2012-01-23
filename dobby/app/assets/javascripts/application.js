@@ -30,4 +30,9 @@ $(document).ready(function () {
     }
   });
   $(".timepicker").timeEntry();
+  
+  // disable link
+  $('.disable_link').click(function(e){
+    e.preventDefault();
+  });
 }); 

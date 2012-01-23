@@ -48,5 +48,21 @@ a {
   margin: 0 auto;
 }
 
+.vs-label{
+  padding-left: 10px;
+}
+
+.game_header{
+  text-align:left;
+}
+
+.home_team_label{
+  padding-left:10px;
+}
+
+.spread_column{
+  padding-left:12px;
+}
+
   
 

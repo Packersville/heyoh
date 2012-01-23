@@ -6,28 +6,28 @@ class GamesController < ApplicationController
     @weeks = Week.where("year = '#{@get_current_year}'")
   end
   
-#   def create
-#     remove_user_picks_if_present
-#     @userspicks = current_user.users_picks.build(params[:users_picks])
-#     @userspicks.week = @get_current_week
-#     @userspicks.save
-#     redirect_to games_path
-#   end
-  
   def edit
     @week = Week.find(params[:id])
     @games = @week.games
+    @users_picks = UsersPick.where("user_id = #{current_user.id} AND week_id = #{params[:id]}").first
   end
   
-  protected
-  def get_user_picks
-    @users_picks = UsersPick.where("user_id = '#{current_user.id}' AND week = '#{@get_current_week}'").first
-  end
-  
-  def remove_user_picks_if_present
-    picks =  UsersPick.where("user_id = '#{current_user.id}' AND week = '#{@get_current_week}'").first
-    if picks.present?
-      UsersPick.find(picks.id).destroy
+  def update
+    @users_picks = UsersPick.where("user_id = #{current_user.id} AND week_id = #{params[:id]}").first
+    if @users_picks.nil?
+      @users_picks = current_user.users_picks.build(params[:users_picks])
+      @users_picks.week_id = params[:id]
+      if @users_picks.save
+       redirect_to edit_game_path(params[:id])
+      else
+	render 'edit'
+      end
+    else
+      if @users_picks.update_attributes(params[:users_picks])
+	redirect_to edit_game_path(params[:id])
+      else
+	render 'edit'
+      end
     end
   end
 end

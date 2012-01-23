@@ -14,7 +14,7 @@ class WeeksController < ApplicationController
   end
   
   def edit 
-    @teams = Team.all
+    @teams = Team.find(:all, :order => "Name ASC")
     if !@week.games.present?
       16.times { @week.games.build }
       @week.games.each_with_index do |game, index|

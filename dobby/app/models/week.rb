@@ -1,6 +1,7 @@
 class Week < ActiveRecord::Base
   has_many :games
   has_many :users_picks
+  has_many :users_lines
   accepts_nested_attributes_for :games, :allow_destroy => true 
   
   validate :saved_games_unique

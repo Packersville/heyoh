@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120118210829) do
+ActiveRecord::Schema.define(:version => 20120124182401) do
 
   create_table "games", :force => true do |t|
     t.integer  "away_team_id"
@@ -50,6 +50,29 @@ ActiveRecord::Schema.define(:version => 20120118210829) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "users_lines", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "week_id"
+    t.integer  "game1"
+    t.integer  "game2"
+    t.integer  "game3"
+    t.integer  "game4"
+    t.integer  "game5"
+    t.integer  "game6"
+    t.integer  "game7"
+    t.integer  "game8"
+    t.integer  "game9"
+    t.integer  "game10"
+    t.integer  "game11"
+    t.integer  "game12"
+    t.integer  "game13"
+    t.integer  "game14"
+    t.integer  "game15"
+    t.integer  "game16"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users_picks", :force => true do |t|
     t.integer  "user_id"

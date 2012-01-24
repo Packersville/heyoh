@@ -25,7 +25,7 @@ class WeeksController < ApplicationController
   end
   
   def update
-    @teams = Team.all
+    @teams = Team.find(:all, :order => "Name ASC")
     @week = Week.find(params[:id])
     if @week.update_attributes(params[:week])
       redirect_to edit_week_path(params[:id])

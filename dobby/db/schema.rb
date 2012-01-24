@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20120118210829) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "email",                               :default => "",    :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "",    :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20120118210829) do
     t.datetime "updated_at"
     t.string   "firstName"
     t.string   "lastName"
-    t.boolean  "admin"
+    t.boolean  "admin",                               :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

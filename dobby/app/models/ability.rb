@@ -6,9 +6,11 @@ class Ability
     
     if user.admin?
       can :manage, :all
-    else
+    end
+    if user.admin == false
       can :manage, UsersPick
       can :read, Week
+      can :manage, Game
     end 
   end
 end

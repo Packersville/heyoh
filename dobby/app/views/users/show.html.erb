@@ -2,6 +2,7 @@
 
 
 <%= link_to "Pick'em", games_path %><br/>
+<%= link_to "Lines", users_lines_path %><br/>
 <% if current_user.admin == true %>
   <%= link_to "Admin Page", admin_index_path %>
 <% end %>

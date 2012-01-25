@@ -6,7 +6,6 @@ Dobby::Application.routes.draw do
   resources :users, :only => :show
   resources :weeks, :only => [:index, :edit, :update]
   resources :games, :only => [:index, :edit, :update]
-  resources :users_lines, :only => [:index, :edit, :update]
   resources :admin, :only => :index
   root :to => "devise/sessions#new"
   

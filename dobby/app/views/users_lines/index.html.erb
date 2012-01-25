@@ -1,7 +1,0 @@
-<h1> Weeks </h1>
-<% @weeks.each_with_index do |week, index| %>
-  <%= link_to "Week #{index+1}", edit_users_line_path(week.id) %><br/>
-<% end %>
-<div class="navigation-links">
-  <%= link_to "User Index", user_path(current_user) %>
-</div>
